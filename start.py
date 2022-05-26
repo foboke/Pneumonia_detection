@@ -7,7 +7,7 @@ PATH_TO_TEST_IMAGES = './test_images/'
 
 def get_list_of_images():
     file_list = os.listdir(PATH_TO_TEST_IMAGES)
-    return [str(filename) for filename in file_list if str(filename).endswith('.png')]
+    return [str(filename) for filename in file_list if str(filename).endswith('.jpg')]
 
 
 
