@@ -13,7 +13,7 @@ def get_list_of_images():
 
 def main():
     st.sidebar.subheader('Load image')
-    image_file_uploaded = st.sidebar.file_uploader('Upload an image', type = 'png')
+    image_file_uploaded = st.sidebar.file_uploader('Upload an image', type = 'jpg')
     st.sidebar.text('OR')
     image_file_chosen = st.sidebar.selectbox('Select an existing image:', get_list_of_images())
     
