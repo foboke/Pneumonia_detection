@@ -1,2 +1,2 @@
 torch
-torchvision==0.18.0
+torchvision==0.18.0  --no-deps --no-cache-dir
