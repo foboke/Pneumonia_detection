@@ -1,6 +1,7 @@
 import io
 from PIL import Image
 import streamlit as st
+import numpy as np
 import torch
 from torchvision import transforms
 
