@@ -81,7 +81,7 @@ def predict(image_path, model, topk=2):
     img = process_image(image_path)
     image_tensor = torch.from_numpy(img).type(torch.FloatTensor)
     model_input = image_tensor.unsqueeze(0)
-    st.write(model_inputs)
+    st.write(model_input)
     probs = torch.exp(model(model_input))
     
     
