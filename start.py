@@ -4,7 +4,7 @@ import streamlit as st
 import torch
 from torchvision import transforms
 
-MODEL_PATH = 'useful_files/model.pt'
+MODEL_PATH = 'useful_files/model_DenseNet.pt'
 LABELS_PATH = 'model_classes.txt'
 
 
