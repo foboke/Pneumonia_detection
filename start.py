@@ -50,27 +50,27 @@ def predict1(model, categories, image):
         st.write(categories[all_catid[i]], all_prob[i].item())
         
         
-    def process_image(image):
-        #img = Image.open(image)
-        img = image
-        ##########Scales 
-        if img.size[0] > img.size[1]:
-            img.thumbnail((1000000, 256))
-        else:
-            img.thumbnail((256 ,1000000))
-        #######Crops: to crop the image we have to specifiy the left,Right,button and the top pixels because the crop function take a rectongle ot pixels
-        Left = (img.width - 224) / 2
-        Right = Left + 224
-        Top = (img.height - 244) / 2
-        Buttom = Top + 224
-        img = img.crop((Left, Top, Right, Buttom))
-        img = np.stack((img,)*3, axis=-1)# to repeate the the one chanel of a gray image to be RGB image 
-        #img = np.repeat(image[..., np.newaxis], 3, -1)
-        #print(np.array(img).shape)
-        #normalization (divide the image by 255 so the value of the channels will be between 0 and 1 and substract the mean and divide the result by the standtared deviation)
-        img = ((np.array(img) / 255) - np.array([0.485, 0.456, 0.406])) / np.array([0.229, 0.224, 0.225])
-        img = img.transpose((2, 0, 1))
-        return img    
+def process_image(image):
+    #img = Image.open(image)
+    img = image
+    ##########Scales 
+    if img.size[0] > img.size[1]:
+        img.thumbnail((1000000, 256))
+    else:
+        img.thumbnail((256 ,1000000))
+    #######Crops: to crop the image we have to specifiy the left,Right,button and the top pixels because the crop function take a rectongle ot pixels
+    Left = (img.width - 224) / 2
+    Right = Left + 224
+    Top = (img.height - 244) / 2
+    Buttom = Top + 224
+    img = img.crop((Left, Top, Right, Buttom))
+    img = np.stack((img,)*3, axis=-1)# to repeate the the one chanel of a gray image to be RGB image 
+    #img = np.repeat(image[..., np.newaxis], 3, -1)
+    #print(np.array(img).shape)
+    #normalization (divide the image by 255 so the value of the channels will be between 0 and 1 and substract the mean and divide the result by the standtared deviation)
+    img = ((np.array(img) / 255) - np.array([0.485, 0.456, 0.406])) / np.array([0.229, 0.224, 0.225])
+    img = img.transpose((2, 0, 1))
+    return img    
  
 
 
