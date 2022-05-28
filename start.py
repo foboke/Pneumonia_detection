@@ -51,9 +51,6 @@ def predict(model, categories, image):
         
         
     def process_image(image):
-    ''' Scales, crops, and normalizes a PIL image for a PyTorch model,
-        returns an Numpy array
-    '''
         #img = Image.open(image)
         img = image
         ##########Scales 
