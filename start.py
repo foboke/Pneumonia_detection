@@ -4,8 +4,8 @@ import streamlit as st
 import torch
 from torchvision import transforms
 
-MODEL_PATH = 'custom_model/model.pt'
-LABELS_PATH = 'custom_model/model_classes.txt'
+MODEL_PATH = 'useful_files/model.pt'
+LABELS_PATH = 'model_classes.txt'
 
 
 def load_image():
