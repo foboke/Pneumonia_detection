@@ -30,7 +30,7 @@ def load_labels(labels_file):
         return categories
 
 
-def predict(model, categories, image):
+def predict1(model, categories, image):
     preprocess = transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
