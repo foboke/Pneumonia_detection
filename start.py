@@ -10,7 +10,7 @@ LABELS_PATH = 'model_classes.txt'
 
 
 def load_image():
-    uploaded_file = st.file_uploader(label='Pick an image to test')
+    uploaded_file = st.file_uploader(label='Upload the image of a chest Xray')
     if uploaded_file is not None:
         image_data = uploaded_file.getvalue()
         st.image(image_data)
@@ -101,11 +101,11 @@ def predict(image_path, model, topk=2):
 
 
 def main():
-    st.title('Custom model demo')
+    st.title('Pneumonia Detection Interface on Chest Xray')
     model = load_model(MODEL_PATH)
     categories = load_labels(LABELS_PATH)
     image = load_image()
-    result = st.button('Run on image')
+    result = st.button('Launch analysis on Xray')
     if result:
         st.write('Calculating results...')
         #predict(model, categories, image)
