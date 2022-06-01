@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import tensorflow as tf 
 import numpy as np 
-from PIL import Image, ImageOps
+#from PIL import Image, ImageOps
 
 
 st.write(""" # Pneumonia detection on Chest X-Rray """)
