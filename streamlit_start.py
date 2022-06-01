@@ -14,7 +14,7 @@ model=tf.keras.models.load_model('useful_files/model_pneumonia_new.h5')
 
 
 def preprocessed_image(file):
-    image = file.resize((150,150), Image.LANCZOS)
+    image = file.resize((150,150))
     image = np.array(image)
     image = np.expand_dims(image, axis=0) 
     return image
@@ -22,7 +22,7 @@ def preprocessed_image(file):
 
 def import_n_pred(image_data, model):
     size = (150,150, 3)
-    image = ImageOps.fit(image_data, size, Image.LANCZOS )
+    image = ImageOps.fit(image_data, size )
     img = np.asarray(image)
     reshape=img[np.newaxis,...]
     pred = model.predict(reshape)
@@ -61,12 +61,12 @@ if Generate_pred:
         st.image(the_image, use_column_width=True)
     #pred=import_n_pred(image, model)
     
-    predictions = model_predict( the_image, model)
+    #predictions = model_predict( the_image, model)
     used_images = preprocessed_image(the_image)
     labels = ['Pneumonia', 'Sain']
     #st.title("Prediction of image is {}".format(labels[np.argmax(pred)]))
     
-    #predictions = np.argmax(model.predict(used_images), axis=-1)
+    predictions = np.argmax(model.predict(used_images), axis=-1)
     if predictions == 1:
         st.error("Cells get parasitized")
     elif predictions == 0:
