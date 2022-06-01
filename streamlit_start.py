@@ -7,7 +7,7 @@ from PIL import Image, ImageOps
 st.write(""" # Pneumonia detection on Chest X-Rray """)
 upload_file = st.sidebar.file_uploader("Upload Chest X-Ray", type="png")
 Generate_pred=st.sidebar.button("Diagnostic")
-model=tf.keras.models.load_model('malaria_cell.h5')
+model=tf.keras.models.load_model('useful_files/model_pneumonia.h5')
 
 def import_n_pred(image_data, model):
     size = (150,150)
