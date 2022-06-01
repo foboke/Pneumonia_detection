@@ -20,7 +20,7 @@ def import_n_pred(image_data, model):
   
 if Generate_pred:
     image=Image.open(upload_file)
-    with st.beta_expander('X-Ray', expanded = True):
+    with st.expander('X-Ray', expanded = True):
         st.image(image, use_column_width=True)
     pred=import_n_pred(image, model)
     labels = ['Parasitized', 'Uninfected']
