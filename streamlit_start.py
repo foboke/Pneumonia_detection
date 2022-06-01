@@ -63,11 +63,11 @@ if Generate_pred:
     
     #predictions = model_predict( the_image, model)
     used_images = preprocessed_image(the_image)
-    labels = ['Pneumonia', 'Sain']
+    #labels = ['Pneumonia', 'Sain']
     #st.title("Prediction of image is {}".format(labels[np.argmax(pred)]))
     
     predictions = np.argmax(model.predict(used_images), axis=-1)
     if predictions == 1:
-        st.error("Cells get parasitized")
+        st.error("This patient has Pneumonia")
     elif predictions == 0:
-        st.success("Cells is healty Uninfected")
+        st.success("This patient does not have pneumonia")
