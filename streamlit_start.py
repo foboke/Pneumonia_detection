@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image, ImageOps
 
 
-st.write(""" # Pneumonia detection on Chest X-Rray """)
+st.write(""" # Pneumonia detection on Chest X-ray """)
 upload_file = st.sidebar.file_uploader("Upload Chest X-Ray", type=['jpg','png','jpeg'])
 Generate_pred=st.sidebar.button("Diagnostic")
 model=tf.keras.models.load_model('useful_files/model_pneumonia_new.h5')
