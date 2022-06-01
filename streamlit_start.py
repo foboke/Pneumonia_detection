@@ -18,8 +18,8 @@ def preprocessed_image(file):
 
 
 def import_n_pred(image_data, model):
-    size = (150,150)
-    image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+    size = (150,150, 3)
+    image = ImageOps.fit(image_data, size, Image.LANCZOS )
     img = np.asarray(image)
     reshape=img[np.newaxis,...]
     pred = model.predict(reshape)
