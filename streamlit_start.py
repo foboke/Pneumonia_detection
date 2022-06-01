@@ -10,7 +10,7 @@ Generate_pred=st.sidebar.button("Diagnostic")
 model=tf.keras.models.load_model('useful_files/model_pneumonia.h5')
 
 def import_n_pred(image_data, model):
-    size = (150,150)
+    size = (150,150, 1)
     image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
     img = np.asarray(image)
     reshape=img[np.newaxis,...]
