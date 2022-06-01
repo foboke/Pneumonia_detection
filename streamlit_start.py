@@ -56,7 +56,7 @@ def model_predict(img_path, model):
     
   
 if Generate_pred:
-    the_image=Image.open(upload_file)
+    the_image=Image.open(upload_file).convert('RGB')
     with st.expander('X-Ray', expanded = True):
         st.image(the_image, use_column_width=True)
     #pred=import_n_pred(image, model)
