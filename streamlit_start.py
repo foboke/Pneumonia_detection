@@ -11,7 +11,7 @@ model=tf.keras.models.load_model('useful_files/model_pneumonia_new.h5')
 
 
 def preprocessed_image(file):
-    image = file.resize((150,150, 3), Image.LANCZOS)
+    image = file.resize((150,150), Image.LANCZOS)
     image = np.array(image)
     image = np.expand_dims(image, axis=0) 
     return image
