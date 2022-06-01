@@ -10,7 +10,7 @@ Generate_pred=st.sidebar.button("Diagnostic")
 model=tf.keras.models.load_model('useful_files/model_pneumonia_new.h5')
 
 def import_n_pred(image_data, model):
-    size = (150,150, 1)
+    size = (150,150)
     image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
     img = np.asarray(image)
     reshape=img[np.newaxis,...]
@@ -23,5 +23,5 @@ if Generate_pred:
     with st.expander('X-Ray', expanded = True):
         st.image(image, use_column_width=True)
     pred=import_n_pred(image, model)
-    labels = ['Parasitized', 'Uninfected']
+    labels = ['Pneumonia', 'Sain']
     st.title("Prediction of image is {}".format(labels[np.argmax(pred)]))
