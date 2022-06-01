@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import tensorflow as tf 
 import numpy as np 
-#from PIL import Image, ImageOps
+from PIL import Image, ImageOps
 
 
 st.write(""" # Pneumonia detection on Chest X-Rray """)
@@ -56,13 +56,13 @@ def model_predict(img_path, model):
     
   
 if Generate_pred:
-    image=Image.open(upload_file)
+    the_image=Image.open(upload_file)
     with st.expander('X-Ray', expanded = True):
-        st.image(image, use_column_width=True)
+        st.image(the_image, use_column_width=True)
     #pred=import_n_pred(image, model)
     
-    predictions = model_predict( image, model)
-    used_images = preprocessed_image(image)
+    predictions = model_predict( the_image, model)
+    used_images = preprocessed_image(the_image)
     labels = ['Pneumonia', 'Sain']
     #st.title("Prediction of image is {}".format(labels[np.argmax(pred)]))
     
