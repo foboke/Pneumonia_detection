@@ -30,7 +30,7 @@ def import_n_pred(image_data, model):
   
     
 def model_predict(img_path, model):
-    img = image.load_img(img_path, target_size=(224, 224))
+    img = image.load_img(img_path, target_size=(150, 150))
 
     # Preprocessing the image
     x = image.img_to_array(img)
